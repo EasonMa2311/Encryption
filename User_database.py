@@ -8,9 +8,17 @@ class DataRecord:
         # Create the table with data types for each column
         self.cc.execute("""
             CREATE TABLE IF NOT EXISTS UserData ( 
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                Userid INTEGER PRIMARY KEY AUTOINCREMENT,
                 UserName TEXT,
                 Password TEXT
+            )
+        """)
+        self.DataBase.commit()
+        self.cc.execute("""
+            CREATE TABLE IF NOT EXISTS UserSetting ( 
+                Userid INTEGER PRIMARY KEY AUTOINCREMENT,
+                theme TEXT,
+                font TEXT,
             )
         """)
         self.DataBase.commit()
@@ -27,7 +35,7 @@ class DataRecord:
     def insert_new_user(self,user,password):
         self.cc.execute('SELECT COUNT(id) FROM UserData')
         id = (self.cc.fetchall()[0][0])+1
-        self.cc.execute('INSERT INTO UserData (id, UserName ,Password ) VALUES (? , ?, ?);', (id,user, password))
+        self.cc.execute('INSERT INTO UserData (Userid, UserName ,Password ) VALUES (? , ?, ?);', (id,user, password))
         self.DataBase.commit()
     
     def check_password(self,user,password):
