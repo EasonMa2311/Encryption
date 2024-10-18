@@ -33,8 +33,11 @@ class DataRecord:
 
 
     def insert_new_user(self,user,password):
-        self.cc.execute('SELECT COUNT(id) FROM UserData')
-        id = (self.cc.fetchall()[0][0])+1
+        try:
+            self.cc.execute('SELECT COUNT(Userid) FROM UserData')
+            id = (self.cc.fetchall()[0][0])+1
+        except:
+            id = 1
         self.cc.execute('INSERT INTO UserData (Userid, UserName ,Password ) VALUES (? , ?, ?);', (id,user, password))
         self.DataBase.commit()
     
