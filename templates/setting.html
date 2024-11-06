@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption App</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/static/styles_index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div id="setting-container">
+            <form id="theme-setting" class="settings" class="switch-toggle">
+                <b>Theme</b>
+                <label for="Dark_button">Dark</label>
+                <input type="radio" name="state-d" id="Dark_button" style="display: none;">
+                <label for="Bright_button">Bright</label>
+                <input type="radio" name="state-d" id="Bright_button" style="display: none;">
+
+            </form>
+            <form id="font-setting" class="settings" class="switch-toggle">
+                <b>Font</b>
+                <label for="Big-font-button">Big</label>
+                <input type="radio" name="state-c" id="Big-font-button" style="display: none;" >
+                <label for="small-font-button">Small</label>
+                <input type="radio"  name="state-c" id="small-font-button" style="display: none;">
+
+            </form>
+            <div></div>
+        <div id="user-data-setting">
+            <form id="change-username" class="settings">
+                <b>Change Username</b>
+                <input type="text" placeholder="Enter you current name">
+                <input type="text" placeholder="Enter new name">
+                <button>Comfirm Change</button>
+            </form>
+            <form id="change-password" class="settings">
+                <b>Change Password</b>
+                <input type="password" placeholder="Enter you current Password">
+                <input type="password" placeholder="Enter new password">
+                <button>Comfirm Change</button>
+            </form>
+        </div>    
+            
+            
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
