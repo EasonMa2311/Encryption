@@ -13,11 +13,15 @@ a.style.display = "None";
 b.style.display = "None";
 
 
+
+//globol
+
+function setting_page_open(){
+    document.location.href = "/setting";
+}
+
+
 //home.html
-
-
-
-
 
 function login_open(){
     document.getElementById("signup-form").style.display = "None";
