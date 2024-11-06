@@ -15,6 +15,9 @@ def home():
 def index():
     return render_template('index.html')
 
+@app.route('/setting')
+def setting():
+    return render_template('setting.html')
 
 
 @app.route('/encrypt', methods=['POST'])
